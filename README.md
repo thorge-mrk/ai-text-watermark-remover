@@ -1,6 +1,6 @@
 # AI Text Watermark Remover
 
-Ein frei verfügbares Open‑Source‑Tool zum Erkennen und Entfernen unsichtbarer Unicode‑Wasserzeichen sowie typischer KI‑Typografie in Texten. Es wurde in Deutschland entwickelt und unter der MIT‑Lizenz veröffentlicht.
+Ein frei verfügbares Open‑Source‑Tool zum Erkennen und Entfernen unsichtbarer Unicode‑Wasserzeichen sowie typischer KI‑Typografie in Texten. 
 
 ## 🌟 Was macht dieses Tool?
 
