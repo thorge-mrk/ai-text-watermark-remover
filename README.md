@@ -1,142 +1,64 @@
-# 🔍 KI-Wasserzeichen Detektor
+# AI Text Watermark Remover
 
-Ein kostenloses, browserbasiertes Tool zur Erkennung und Entfernung von unsichtbaren Unicode-Zeichen und KI-typischen Wasserzeichen in Texten.
+Ein frei verfügbares Open‑Source‑Tool zum Erkennen und Entfernen unsichtbarer Unicode‑Wasserzeichen sowie typischer KI‑Typografie in Texten. Es wurde in Deutschland entwickelt und unter der MIT‑Lizenz veröffentlicht.
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://mrowinski-thorge.github.io/AI-Watermark-Detect/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![HTML](https://img.shields.io/badge/HTML-100%25-orange.svg)](https://github.com/Mrowinski-Thorge/AI-Watermark-Detect)
+## 🌟 Was macht dieses Tool?
 
-## ✨ Features
+Viele Texte aus KI‑Modellen enthalten unsichtbare Steuerzeichen oder typografische Eigenheiten, die von Menschen selten verwendet werden. Angreifer können sogar Zero‑Width‑Zeichen nutzen, um Schadcode oder Anweisungen zu verbergen:contentReference[oaicite:0]{index=0}. Dieses Tool:
 
-- **🔎 Umfassende Erkennung**: Erkennt ALLE verdächtigen Unicode-Zeichen
-- **🤖 KI-Wasserzeichen**: Identifiziert typische KI-generierte Schriftzeichen
-- **👁️ Transparenz**: Sie entscheiden, welche Zeichen entfernt werden
-- **🔒 Privatsphäre**: 100% lokale Verarbeitung - keine Datenübertragung
-- **🍪 Keine Cookies**: Keinerlei Tracking oder Datenspeicherung
-- **💰 Komplett kostenlos**: Keine versteckten Kosten oder Premium-Funktionen
-- **⚡ Schnell**: Sofortige Ergebnisse ohne Wartezeit
+- findet und markiert unsichtbare Zeichen und bidirektionale Steuerzeichen,
+- normalisiert typische KI‑Zeichen wie Em‑Dashes und geschwungene Anführungszeichen zu einfachen ASCII‑Hyphens und -Quotes:contentReference[oaicite:1]{index=1},
+- arbeitet komplett im Browser bzw. lokal – dein Text verlässt nie deinen Computer:contentReference[oaicite:2]{index=2}.
 
-## 🚀 Live Demo
+## ⚙️ Wie funktioniert es?
 
-Probiere das Tool direkt aus: [KI-Wasserzeichen Detektor](https://mrowinski-thorge.github.io/AI-Watermark-Detect/)
+1. **Texteingabe**: Du fügst deinen Text in das Eingabefeld oder per CLI/Script ein.
+2. **Analyse**: Das Tool scannt den Text nach verdächtigen Unicode‑Zeichen und zeigt sie farblich hervorgehoben an.
+3. **Auswahl und Bereinigung**: Du entscheidest, welche Zeichen entfernt oder normalisiert werden sollen.
+4. **Export**: Der bereinigte Text kann direkt kopiert oder in Dateien geschrieben werden.
 
-## 🎯 Erkannte Zeichen
+## 🔍 Erkennbare Zeichen
 
-### Unsichtbare Unicode-Zeichen
+### Unsichtbare Unicode‑Zeichen
+
 - **Zero Width Space** (U+200B)
-- **Zero Width Non-Joiner** (U+200C)
+- **Zero Width Non‑Joiner** (U+200C)
 - **Zero Width Joiner** (U+200D)
 - **Word Joiner** (U+2060)
-- **Narrow No-Break Space** (U+202F)
-- **Non-Breaking Space** (U+00A0)
-- **Zero Width No-Break Space** (U+FEFF)
+- **Narrow No‑Break Space** (U+202F)
+- **Non‑Breaking Space** (U+00A0)
+- **Zero Width No‑Break Space** (U+FEFF)
+- **Bidirektionale Override‑Zeichen** (U+202A–U+202E), die die Textreihenfolge ändern können:contentReference[oaicite:3]{index=3}.
 
-### KI-typische Zeichen
-- **En Dash** (–) → `-`
-- **Em Dash** (—) → `-`
-- **Left Double Quote** (") → `"`
-- **Right Double Quote** (") → `"`
-- **Left Single Quote** (') → `'`
-- **Right Single Quote** (') → `'`
+### Typische KI‑Zeichen
+
+Viele LLM‑Modelle verwenden typografische Zeichen, die in normaler Tastatureingabe selten vorkommen:contentReference[oaicite:4]{index=4}. Diese werden automatisch in einfache ASCII‑Entsprechungen umgewandelt:
+
+- **Em Dash** (—) und **En Dash** (–) → `-`
+- **Smart Quotes** „“ ‚’ → `"` und `'`
 - **Ellipsis** (…) → `...`
+
+## 📦 Installation & Nutzung
+
+- **Web‑App**: Öffne `web/index.html` im Browser, füge Text ein, analysiere ihn und kopiere das Ergebnis.
+- **Node.js**: `npm install ai-text-watermark-remover` und dann `const { removeWatermarks } = require('ai-text-watermark-remover');`.
+- **Python**: `pip install ai_text_watermark_remover` und `from ai_text_watermark_remover import remove_watermarks`.
+- **CLI**: Nutze `cli/clean.js` (Node) oder `cli/clean.py` (Python), um Dateien oder STDIN zu bereinigen.
 
 ## 💡 Anwendungsfälle
 
-- 📝 **Akademisches Schreiben**: Bereinigung von KI-generierten Texten
-- 📄 **Dokumentenverarbeitung**: Entfernung versteckter Formatierungszeichen
-- ✍️ **Content-Erstellung**: Normalisierung von kopierten Texten
-- 🔍 **Qualitätssicherung**: Überprüfung auf versteckte Zeichen
-- 🎓 **Bildung**: Lehrmittel für Unicode und Textverarbeitung
+- Bereinigung von KI‑generierten Texten vor dem Einfügen in E‑Mails, Blogs oder wissenschaftliche Arbeiten.
+- Entfernen versteckter Steuerzeichen aus kopierten Texten, z. B. aus PDFs oder Web‑Artikeln.
+- Überprüfung von Code oder Konfigurationsdateien auf unsichtbare Zeichen, um Sicherheitsrisiken zu minimieren:contentReference[oaicite:5]{index=5}.
 
-## 🛠️ Technologie
+## ⚠️ Hinweis
 
-- **100% HTML/CSS/JavaScript**: Keine externen Abhängigkeiten
-- **Client-Side Processing**: Alle Verarbeitung erfolgt lokal im Browser
-- **Moderne Web-APIs**: Verwendet aktuelle Browser-Standards
-- **Responsive Design**: Funktioniert auf Desktop und Mobile
-- **GitHub Pages**: Kostenfreies, zuverlässiges Hosting
-
-## 📖 Wie es funktioniert
-
-1. **Text einfügen**: Kopiere deinen Text in das Eingabefeld
-2. **Analysieren**: Klicke auf "Text analysieren"
-3. **Auswählen**: Wähle die Zeichen aus, die du entfernen/normalisieren möchtest
-4. **Bereinigen**: Klicke auf "Text bereinigen"
-5. **Kopieren**: Nutze "Bereinigten Text kopieren" für das Ergebnis
-
-## 🔒 Datenschutz & Sicherheit
-
-- ✅ **Keine Datenübertragung**: Dein Text verlässt niemals deinen Browser
-- ✅ **Keine Cookies**: Keinerlei Tracking oder Speicherung
-- ✅ **Keine Analyse-Tools**: Vollständig privat
-- ✅ **Open Source**: Der gesamte Code ist einsehbar
-- ✅ **DSGVO-konform**: Keine personenbezogenen Daten werden erhoben
-
-## 📋 Warum besser als andere Tools?
-
-| Feature | Unser Tool | Andere Tools |
-|---------|-----------|--------------|
-| Alle Unicode-Zeichen | ✅ | ❌ Teilweise |
-| KI-typische Zeichen | ✅ | ❌ |
-| Volle Transparenz | ✅ | ❌ |
-| Keine Datenübertragung | ✅ | ❌ |
-| Kostenlos | ✅ | 💰 Oft kostenpflichtig |
-| Keine Registrierung | ✅ | ❌ |
-| Open Source | ✅ | ❌ |
-
-## 🤝 Beitragen
-
-Beiträge sind willkommen! Wenn du Verbesserungsvorschläge hast:
-
-1. Fork das Repository
-2. Erstelle einen Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit deine Änderungen (`git commit -m 'Add some AmazingFeature'`)
-4. Push zum Branch (`git push origin feature/AmazingFeature`)
-5. Öffne einen Pull Request
-
-## ⚠️ Haftungsausschluss
-
-Dieses Tool erkennt und entfernt viele gängige unsichtbare Zeichen und KI-Wasserzeichen. Wir garantieren jedoch **nicht**, dass 100% aller Wasserzeichen oder versteckten Zeichen erkannt werden. Die Effektivität hängt von verschiedenen Faktoren ab:
-
-- Art und Implementierung der Wasserzeichen-Technik
-- Unicode-Variationen
-- Textkodierung
-- Browser-Kompatibilität
-
-**Nutzung auf eigene Verantwortung.** Das Tool ist für alle rechtmäßigen Zwecke kostenlos verfügbar, darf aber nicht für schädliche oder illegale Aktivitäten verwendet werden.
+Obwohl das Tool viele gängige unsichtbare Zeichen und typografische „AI‑Tells“ entfernt, garantiert es keine 100 %‑Erkennung. Einige Wasserzeichen‑Techniken können komplexer sein. Die Nutzung erfolgt auf eigene Verantwortung.
 
 ## 📄 Lizenz
 
-Das Programm AI-Watermark-Detect ist unter der MIT-Lizenz lizenziert - siehe [LICENSE](LICENSE) für Details.
-
-## 👤 Autor
-
-**Thorge Mrowinski**
-
-- GitHub: [@Mrowinski-Thorge](https://github.com/Mrowinski-Thorge)
-- E-Mail: thorge.dev@proton.me
-
-## 🔗 Links
-
-- [Live Demo](https://mrowinski-thorge.github.io/AI-Watermark-Detect/)
-- [Impressum](https://mrowinski-thorge.github.io/AI-Watermark-Detect/impressum.html)
-- [Datenschutz](https://mrowinski-thorge.github.io/AI-Watermark-Detect/datenschutz.html)
-- [Nutzungsbedingungen](https://mrowinski-thorge.github.io/AI-Watermark-Detect/nutzungsbedingungen.html)
-
-## 📊 Statistiken
-
-![GitHub stars](https://img.shields.io/github/stars/Mrowinski-Thorge/AI-Watermark-Detect?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Mrowinski-Thorge/AI-Watermark-Detect?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/Mrowinski-Thorge/AI-Watermark-Detect?style=social)
-
-## 🙏 Danksagung
-
-- Inspiriert durch die Notwendigkeit, KI-generierte Texte zu bereinigen
-- Dank an die Open-Source-Community
-- GitHub Pages für das kostenlose Hosting
+Dieses Projekt steht unter der MIT‑Lizenz. Du kannst es frei nutzen, verändern und weiterverbreiten.
 
 ---
-
-⭐ **Gefällt dir das Projekt?** Gib uns einen Stern auf GitHub!
 
 **Made with ❤️ in Germany**
