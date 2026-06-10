@@ -4,11 +4,11 @@ Ein frei verfügbares Open‑Source‑Tool zum Erkennen und Entfernen unsichtbar
 
 ## 🌟 Was macht dieses Tool?
 
-Viele Texte aus KI‑Modellen enthalten unsichtbare Steuerzeichen oder typografische Eigenheiten, die von Menschen selten verwendet werden. Angreifer können sogar Zero‑Width‑Zeichen nutzen, um Schadcode oder Anweisungen zu verbergen:contentReference[oaicite:0]{index=0}. Dieses Tool:
+Viele Texte aus KI‑Modellen enthalten unsichtbare Steuerzeichen oder typografische Eigenheiten, die von Menschen selten verwendet werden. Angreifer können sogar Zero‑Width‑Zeichen nutzen, um Schadcode oder Anweisungen zu verbergen. Dieses Tool:
 
 - findet und markiert unsichtbare Zeichen und bidirektionale Steuerzeichen,
-- normalisiert typische KI‑Zeichen wie Em‑Dashes und geschwungene Anführungszeichen zu einfachen ASCII‑Hyphens und -Quotes:contentReference[oaicite:1]{index=1},
-- arbeitet komplett im Browser bzw. lokal – dein Text verlässt nie deinen Computer:contentReference[oaicite:2]{index=2}.
+- normalisiert typische KI‑Zeichen wie Em‑Dashes und geschwungene Anführungszeichen zu einfachen ASCII‑Hyphens und -Quotes,
+- arbeitet komplett im Browser bzw. lokal – dein Text verlässt nie deinen Computer.
 
 ## ⚙️ Wie funktioniert es?
 
@@ -28,11 +28,11 @@ Viele Texte aus KI‑Modellen enthalten unsichtbare Steuerzeichen oder typografi
 - **Narrow No‑Break Space** (U+202F)
 - **Non‑Breaking Space** (U+00A0)
 - **Zero Width No‑Break Space** (U+FEFF)
-- **Bidirektionale Override‑Zeichen** (U+202A–U+202E), die die Textreihenfolge ändern können:contentReference[oaicite:3]{index=3}.
+- **Bidirektionale Override‑Zeichen** (U+202A–U+202E), die die Textreihenfolge ändern können.
 
 ### Typische KI‑Zeichen
 
-Viele LLM‑Modelle verwenden typografische Zeichen, die in normaler Tastatureingabe selten vorkommen:contentReference[oaicite:4]{index=4}. Diese werden automatisch in einfache ASCII‑Entsprechungen umgewandelt:
+Viele LLM‑Modelle verwenden typografische Zeichen, die in normaler Tastatureingabe selten vorkommen. Diese werden automatisch in einfache ASCII‑Entsprechungen umgewandelt:
 
 - **Em Dash** (—) und **En Dash** (–) → `-`
 - **Smart Quotes** „“ ‚’ → `"` und `'`
@@ -49,7 +49,7 @@ Viele LLM‑Modelle verwenden typografische Zeichen, die in normaler Tastaturein
 
 - Bereinigung von KI‑generierten Texten vor dem Einfügen in E‑Mails, Blogs oder wissenschaftliche Arbeiten.
 - Entfernen versteckter Steuerzeichen aus kopierten Texten, z. B. aus PDFs oder Web‑Artikeln.
-- Überprüfung von Code oder Konfigurationsdateien auf unsichtbare Zeichen, um Sicherheitsrisiken zu minimieren:contentReference[oaicite:5]{index=5}.
+- Überprüfung von Code oder Konfigurationsdateien auf unsichtbare Zeichen, um Sicherheitsrisiken zu minimieren.
 
 ## ⚠️ Hinweis
 
