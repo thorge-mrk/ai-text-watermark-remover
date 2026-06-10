@@ -1,0 +1,20 @@
+{
+  "name": "AI Text Watermark Remover",
+  "short_name": "AIWatermarkRemover",
+  "description": "Browser-based tool to detect and remove invisible Unicode watermarks in text",
+  "start_url": "./web/index.html",
+  "scope": "./web/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

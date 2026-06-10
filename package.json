@@ -1,0 +1,26 @@
+{
+  "name": "ai-text-watermark-remover",
+  "version": "1.0.0",
+  "description": "Detect and remove invisible Unicode watermarks and normalise typographic characters.",
+  "main": "src/remover.js",
+  "bin": {
+    "ai-text-watermark-remover": "cli/clean.js"
+  },
+  "scripts": {
+    "test": "node -e \"require('./src/remover.js').removeWatermarks('test'); console.log('OK');\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thorge-mrk/ai-text-watermark-remover.git"
+  },
+  "author": "Thorge Mrowinski",
+  "license": "MIT",
+  "keywords": [
+    "watermark",
+    "unicode",
+    "text",
+    "clean",
+    "ai",
+    "llm"
+  ]
+}
